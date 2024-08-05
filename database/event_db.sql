@@ -1,30 +1,10 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Oct 14, 2020 at 11:00 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `event_db`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `audience`
 --
 
 CREATE TABLE `audience` (
@@ -92,7 +72,7 @@ CREATE TABLE `system_settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `system_settings`
+
 --
 
 INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `about_content`) VALUES
@@ -101,7 +81,7 @@ INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+
 --
 
 CREATE TABLE `users` (
@@ -122,8 +102,6 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `venue`
---
 
 CREATE TABLE `venue` (
   `id` int(30) NOT NULL,
@@ -133,8 +111,7 @@ CREATE TABLE `venue` (
   `rate` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `venue`
+
 --
 
 INSERT INTO `venue` (`id`, `venue`, `address`, `description`, `rate`) VALUES
@@ -191,29 +168,24 @@ ALTER TABLE `system_settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+--
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `venue`
---
+-- 
 ALTER TABLE `venue`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `venue_booking`
+
 --
 ALTER TABLE `venue_booking`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `audience`
 --
 ALTER TABLE `audience`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
@@ -225,30 +197,27 @@ ALTER TABLE `events`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `system_settings`
+
 --
 ALTER TABLE `system_settings`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `users`
+-- 
 --
 ALTER TABLE `users`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `venue`
+-- 
 --
 ALTER TABLE `venue`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `venue_booking`
+--
 --
 ALTER TABLE `venue_booking`
   MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
